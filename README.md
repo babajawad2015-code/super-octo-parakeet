@@ -1,3 +1,16 @@
+import threading
+import time
+
+def background_monitor():
+    while True:
+        ghost_eye_monitor()
+        # فحص كل 60 ثانية لضمان عدم استهلاك البطارية
+        time.sleep(60)
+
+# بدء المراقبة في خيط منفصل (Thread)
+monitor_thread = threading.Thread(target=background_monitor, daemon=True)
+monitor_thread.start()
+
 nohup python main.py &
 import os
 import platform
