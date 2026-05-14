@@ -1,4 +1,14 @@
-import threading
+def apply_emergency_manual_fix():
+    """تنفيذ بروتوكول التصحيح اليدوي وإرسال تنبيه"""
+    # ... الأكواد السابقة لضبط MTU و DNS ...
+    
+    # إرسال تنبيه مباشر إلى واجهة الهاتف عبر Termux
+    alert_title = "Sovereign JA Protocol"
+    alert_msg = "Latency Breach Detected! Manual Fix Applied Successfully."
+    os.system(f"termux-notification -t '{alert_title}' -c '{alert_msg}' --priority high")
+    
+    print("✅ [NOTIFICATION SENT] User informed of the fix.")
+    import threading
 import time
 
 def background_monitor():
