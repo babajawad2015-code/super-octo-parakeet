@@ -1,4 +1,20 @@
-JA-Network-Optimizer
+import random
+import os
+
+def change_mac_address(interface="wlan0"):
+    """توليد وتطبيق عنوان MAC عشوائي لتعزيز الخصوصية"""
+    # توليد عنوان MAC عشوائي
+    new_mac = "00:" + ":".join(["%02x" % random.randint(0, 255) for _ in range(5)])
+    
+    print(f"[!] Changing MAC for {interface} to {new_mac}")
+    
+    # أوامر التنفيذ اليدوية (تتطلب صلاحيات Root)
+    os.system(f"ifconfig {interface} down")
+    os.system(f"ifconfig {interface} hw ether {new_mac}")
+    os.system(f"ifconfig {interface} up")
+    
+    print("✅ MAC Address Spoofed Successfully.")
+    JA-Network-Optimizer
 def apply_emergency_manual_fix():
     """تنفيذ بروتوكول التصحيح اليدوي وإرسال تنبيه"""
     # ... الأكواد السابقة لضبط MTU و DNS ...
