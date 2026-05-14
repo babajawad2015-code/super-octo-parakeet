@@ -1,3 +1,4 @@
+termux-notification
 import random
 import os
 
