@@ -1,3 +1,4 @@
+JA-Network-Optimizer
 def apply_emergency_manual_fix():
     """تنفيذ بروتوكول التصحيح اليدوي وإرسال تنبيه"""
     # ... الأكواد السابقة لضبط MTU و DNS ...
