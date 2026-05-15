@@ -24,7 +24,44 @@ pkg clean
 # التأكد من أن السكربت العالمي جاهز للعمل في أي وقت
 chmod +x JA-Network-Optimizer/*.py
 
-    os.system(f"ifconfig {interface} down")
+    osimport os
+import time
+import random
+
+# JA-Network-Optimizer V2.0 
+# Sovereign Protocol: Intelligence & Security
+
+def ghost_eye_monitor():
+    """مراقب العين الشبح: يراقب جودة الاتصال ويرسل تنبيهات"""
+    threshold = 100  # حد الـ Ping المسموح به (ms)
+    print("Ghost Eye Active... Watching for Latency Breaches.")
+    
+    while True:
+        # فحص زمن الاستجابة لسيرفرات جوجل أو سيرفر اللعبة
+        response = os.popen("ping -c 1 8.8.8.8").read()
+        if "time=" in response:
+            ping_time = float(response.split("time=")[1].split(" ms")[0])
+            
+            if ping_time > threshold:
+                os.system("termux-notification -t 'Sovereign Alert' -c 'Latency Spike Detected: " + str(ping_time) + "ms'")
+                apply_emergency_manual_fix()
+        
+        time.sleep(30) # فحص كل 30 ثانية لتوفير البطارية
+
+def apply_emergency_manual_fix():
+    """إصلاح الطوارئ: إعادة ضبط المسارات عند حدوث مشكلة"""
+    print("[!] Emergency Fix Triggered. Refreshing DNS & Routes...")
+    os.system("nmcli networking off && nmcli networking on") # إعادة تنشيط الشبكة
+    os.system("setprop net.dns1 1.1.1.1") # فرض DNS كلوفلير
+
+# إضافة ميزة التبديل التلقائي للـ MAC (للمروت فقط أو المحاكي)
+def periodic_stealth_mode():
+    new_mac = "00:" + ":".join(["%02x" % random.randint(0, 255) for _ in range(5)])
+    print(f"[!] Stealth Mode: Rotating Identity to {new_mac}")
+    # أوامر تغيير الـ MAC هنا
+    python main_v2.py &
+    
+    .system(f"ifconfig {interface} down")
     os.system(f"ifconfig {interface} hw ether {new_mac}")
     os.system(f"ifconfig {interface} up")
     
