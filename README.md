@@ -7,7 +7,17 @@ def change_mac_address(interface="wlan0"):
     # توليد عنوان MAC عشوائي
     new_mac = "00:" + ":".join(["%02x" % random.randint(0, 255) for _ in range(5)])
     
-    print(f"[!] Changing MAC for {interface} to {new_mac}")
+    printif [ "$EUID" -ne 0 ]; then 
+  echo "Running in Non-Root mode: Only scan_file and basic tweaks enabled."
+else
+  echo "Root detected: Full Network Sovereignty enabled."
+fi
+def check_network_health():
+    # فحص زمن الاستجابة (Ping) لسيرفرات الألعاب العالمية
+    print("Checking Pulse... 💓")
+    os.system("ping -c 4 1.1.1.1")
+    print("Network Sovereignty Level: OPTIMAL.")
+    (f"[!] Changing MAC for {interface} to {new_mac}")
     
     # أوامر التنفيذ اليدوية (تتطلب صلاحيات Root)
     os.system(f"ifconfig {interface} down")
