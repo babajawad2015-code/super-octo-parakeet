@@ -1,3 +1,4 @@
+هل تريد أن نبرمج "لوحة تحكم" (Dashboard) بسيطة تظهر لك النتائج داخل Termux بشكل جمالي (ASCII Art)؟
 termux-notification
 import random
 import os
