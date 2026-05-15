@@ -19,7 +19,11 @@ def check_network_health():
     print("Network Sovereignty Level: OPTIMAL.")
     (f"[!] Changing MAC for {interface} to {new_mac}")
     
-    # أوامر التنفيذ اليدوية (تتطلب صلاحيات Root)
+    # أوامر التنفيذ اليدوية (تتطلب صلاحيات Root)# تنظيف المخلفات المؤقتة
+pkg clean
+# التأكد من أن السكربت العالمي جاهز للعمل في أي وقت
+chmod +x JA-Network-Optimizer/*.py
+
     os.system(f"ifconfig {interface} down")
     os.system(f"ifconfig {interface} hw ether {new_mac}")
     os.system(f"ifconfig {interface} up")
